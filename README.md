@@ -1,5 +1,18 @@
-# Python-para-sistemas-embebidos
+# Python para sistemas embebidos :snake:
 Repositorio público con información de guía para el desarrollo de prácticas de programación de micropython en sistemas embebidos (esp32)
+
+---
+
+Contenido:
+
+- [ESP32](#la-tarjeta-de-desarrollo-esp32)
+- [MicroPython](#micropython)
+- [Instalación MicroPython](#instalación-de-micropython-en-esp32)
+- [Instalación Thonny](#instalación-de-thonny-entorno-práctico-de-programación)
+- [Uso de pines](#uso-adecuado-de-pines-de-la-placa-esp32)
+- [Entorno de simulación](#micropython-para-esp32-en-entorno-de-simulación)
+- [Información de ayuda](#información-de-ayuda)
+- [Taller 1 :page_facing_up:](#taller-1)
 
 ---
 
@@ -41,7 +54,7 @@ esptool.exe --chip esp32 --port COM6 --baud 460800 write_flash -z 0x1000 esp32-o
  - Para detener la ejecución del programa presiona Stop, o [Ctrl] + [F2].
  - **IMPORTANTE:** el programa se pierde una vez se detiene o se desconecta la tarjeta; para asegurar que el programa quede guardado en esta y que adicionalmente se ejecute en el arranque debe guardar el programa como `main.py` directamente en la tarjeta dando Archivo > Guardar como... si la tarjeta está conectada aparecerá una ventana que permite elegir si el código será guardado en el PC o directamente en la tarjeta.
  
- ## Uso adecuado de pines de la placa esp32
+ # Uso adecuado de pines de la placa esp32
  
  La tarjeta opera a 3.3 voltios, y es sensible a voltajes superiores _(no tolera 5 voltios, se puede averiar)_ y a descarga estática por mala manipulación.
  Algunos pines se recomienda no usarlos ya que intervienen en algunas configuraciones de arranque, otros pines solo funcionan como entradas, en [este enlace](https://randomnerdtutorials.com/esp32-pinout-reference-gpios/) se detalla la disponibilidad de cada pin.
@@ -53,4 +66,15 @@ esptool.exe --chip esp32 --port COM6 --baud 460800 write_flash -z 0x1000 esp32-o
  
  ---
  
- Info
+ # Información de ayuda
+ 
+ - Información de micropython orientada a ESP32: https://docs.micropython.org/en/latest/esp32/quickref.html
+ - Información general de python 1: https://www.geeksforgeeks.org/python-programming-language/
+ - Información general de python 2: https://devdocs.io/python~3.10/
+ 
+ # Taller 1
+
+1. :question: Describa las principales características de la tarjeta Esp32, como voltaje y frecuencia de operación, arquitectura del procesador, tipos de comunicación que ofrece _(wifi, bluetooth, spi, etc...)_, pines de entrada y salida y sus funcionalidades _(pwm, adc, dac, interrupts)_, particularmente consultar por qué no se recomienda utilizar algunos pines  e identificar cuáles son.
+2. :question: Averiguar en qué consiste micropython y en qué se diferencia del python convencional.
+3. :question: Consultar las bibliotecas más comúnmente usadas en micropython y listar algunas de sus funciones con explicación breve _(machine, time, os, network,...)_
+
