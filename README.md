@@ -12,7 +12,8 @@ Contenido:
 - [Uso de pines](#uso-adecuado-de-pines-de-la-placa-esp32)
 - [Entorno de simulación](#micropython-para-esp32-en-entorno-de-simulación)
 - [Información de ayuda](#información-de-ayuda)
-- [Taller 1 :page_facing_up:](#taller-1)
+- [Taller 1 :page_facing_up: :heavy_check_mark:](#taller-1)
+- [Taller 2 :page_facing_up:](#taller-2)
 
 ---
 
@@ -78,3 +79,9 @@ esptool.exe --chip esp32 --port COM6 --baud 460800 write_flash -z 0x1000 esp32-o
 2. :question: Averiguar en qué consiste micropython y en qué se diferencia del python convencional.
 3. :question: Consultar las bibliotecas más comúnmente usadas en micropython y listar algunas de sus funciones con explicación breve _(machine, time, os, network,...)_
 
+# Taller 2
+
+Para el siguiente taller se requiere desarrollar el respectivo códgio en micropython y simular los siguientes ejercicios:
+
+1. Simular un semáforo peatonal que se activa manualmente con un pulsador, este normalmente ha de estar en rojo y al presionarlo debe pasar a verde por 7 segundos, luego amarillo 3 segudos y vuelve a rojo, la secuencia se debe ejecutar solamente cuando se presione el botón.
+2. Ejer2
