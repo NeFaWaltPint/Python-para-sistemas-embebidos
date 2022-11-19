@@ -84,4 +84,13 @@ esptool.exe --chip esp32 --port COM6 --baud 460800 write_flash -z 0x1000 esp32-o
 Para el siguiente taller se requiere desarrollar el respectivo códgio en micropython y simular los siguientes ejercicios:
 
 1. Simular un semáforo peatonal que se activa manualmente con un pulsador, este normalmente ha de estar en rojo y al presionarlo debe pasar a verde por 7 segundos, luego amarillo 3 segudos y vuelve a rojo, la secuencia se debe ejecutar solamente cuando se presione el botón.
-2. Ejer2
+
+![Simulacion ejercicio1](imgs/Ejer1.gif)
+
+2. Presentar el código [ **main.py** ] en un archivo de word junto con el diagrama de conexiones que está en la pestaña del lado derecho [ **diagram.json** ], con esa información se puede verificar el programa sin necesidad de guardarlo en la plataforma web.
+
+![Pestañas codigos](imgs/Ejer1_tabs.png)
+
+# Codigos de ayuda
+
+[]
