@@ -14,6 +14,8 @@ Contenido:
 - [Información de ayuda](#información-de-ayuda)
 - [Taller 1 :page_facing_up: :heavy_check_mark:](#taller-1)
 - [Taller 2 :page_facing_up:](#taller-2)
+- [:sparkles: Códigos de ayuda :sparkles:](#codigos-de-ayuda)
+- [Ejercicio Final :bulb:](#ejercicio-final)
 
 ---
 
@@ -98,3 +100,27 @@ Para el siguiente taller se requiere desarrollar el respectivo códgio en microp
 - [Entrada analógica](ejemplos/Ejercicios.md#usar-entrada-analógica)
 - [Uso de input](ejemplos/Ejercicios.md#usar-función-input)
 - [Uso de listas](ejemplos/Ejercicios.md#uso-de-listas-o-arrays)
+- [Recorrer listas con entrada analógica](ejemplos/Ejercicios.md#recorrer-una-lista-a-voluntad)
+- [Entrada analogica salida digital](ejemplos/Ejercicios.md#uso-de-entrada-analogica-para-controlar-una-salida)
+
+# Ejercicio final
+
+Para el ejercicio propuesto: **Control manual y automatico del riego de una plana** se deben tener en cuenta los siguientes requerimientos:
+
+ 1. Inicialmente llenar una lista de tres con nombres de personas
+ 2. Con un switch debe poder seleccionar entre modo manual o automático
+ 3. En el modo automatico: se lee la entrada analogica y dependiendo del valor se debe regar o no la planta, para eso se usa una salida digital conectada a un led que indique en encendido que debe regar la planta y apagado cuando no. La idea es que se riege cuando el valor de la entrada analógica esté aproximadamente por debajo del 25% o por debajo de 1023.
+ 4. En el modo manual: Igualmente se lee la entrada analogica pero ya no se hace el riego, solamente se debe mostrar un mensaje que diga _X_ persona debe regar la planta. Cada vez que el valor de la entrada analogica esté por debajo del 25% o 1023 debe ir cambiando el nombre de la persona, es decir debe ir recorriendo la lista de las personas que se pidieron al inicio del programa.
+
+:clipboard: Con los códigos de ayuda y practicamente con los dos últimos se puede desarrollar el ejercicio propuesto. :clipboard:
+
+ Los materiales que se requieren para el montaje son:
+
+ - ESP32
+ - Protoboard
+ - Potenciometro de 10K Ohms
+ - Led _cualquier color_
+ - resistencia 220 Ohms para el led
+ - switch _también dip switch_
+ - resistencia 1K Ohms
+ - jumpers

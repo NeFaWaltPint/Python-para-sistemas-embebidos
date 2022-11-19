@@ -116,3 +116,121 @@ try:
 except:
     print("finaliza")
 ```
+
+## Recorrer una lista a voluntad
+
+Para recorrer la lista de manera manual se debe controlar la posicion de la lista, para tal fin se puede usar una variable a modo de conteo para que en determinado suceso haya un incremento de esta variable. una implementación rápida podría ser la siguiente:
+
+```python
+from machine import Pin, ADC
+from time import sleep
+
+entradaAnalogica = ADC(Pin(34))
+
+conteo = 0
+
+personas = ["Monica", "Saul", "Alex"]
+
+try:
+    while True:
+        
+        lectura = entradaAnalogica.read()
+
+        if lectura < 1000:
+            
+            print("Ahora le toca a: ", personas[conteo])
+            
+            conteo = conteo + 1
+
+            if conteo == 3:
+                conteo = 0
+
+except:
+    print("finaliza")
+```
+
+![Sin control de cambios](../imgs/Sincontrol.gif)
+
+El problema de la anterior solución es que si la condición no cambia rápido el conteo se incrementa rápidamente y por ende la lista se recorre en un solo ínstante; para evitar este problema hay que llevar registro de los valores anteriores de esta forma si ya sucedió un cambio antes que no se repita hasta que se vuelva a presentar la situación, de esta forma el coódigo queda de la siguiente manera:
+
+```python
+from machine import Pin, ADC
+from time import sleep
+
+entradaAnalogica = ADC(Pin(34))
+
+conteo = 0
+
+debeCambiar = False
+cambioAnterior = False
+
+personas = ["Monica", "Saul", "Alex"]
+
+try:
+    while True:
+        
+        lectura = entradaAnalogica.read()
+
+        if lectura < 1000:
+            debeCambiar = True
+        else:
+            debeCambiar = False
+
+        if debeCambiar == True and cambioAnterior == False:
+            
+            print("Ahora le toca a: ", personas[conteo])
+            
+            conteo = conteo + 1
+
+            if conteo == 3:
+                conteo = 0
+        
+        cambioAnterior = debeCambiar
+
+except:
+    print("finaliza")
+```
+
+![Con control de cambios](../imgs/controlado.gif)
+
+## Uso de entrada Analogica para controlar una salida
+
+Usar el valor de la entrada analógica para controlar una salida digital.
+
+```python
+from machine import Pin, ADC
+from time import sleep
+
+entradaAnalogica = ADC(Pin(34))
+
+switch = Pin(22, Pin.IN)
+
+led = Pin(2, Pin.OUT)
+
+try:
+    while True:
+        
+        lectura = entradaAnalogica.read()
+
+        modoOperacion = switch.value()
+
+        if modoOperacion == 1:
+
+            print("modo automatico")
+
+            if lectura < 1000:
+                print("regando planta")
+                led.on()
+            else:
+                led.off()
+
+        else:
+
+            print("modo manual")
+        
+        sleep(1)
+except:
+    print("finaliza")
+```
+
+![Simulación parte ejercicio](../imgs/analog_outdig.gif)
