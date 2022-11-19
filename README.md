@@ -93,4 +93,8 @@ Para el siguiente taller se requiere desarrollar el respectivo códgio en microp
 
 # Codigos de ayuda
 
-[]
+- [Salida digital](ejemplos/Ejercicios.md#usar-salida-digital)
+- [Entrada digital](ejemplos/Ejercicios.md#usar-entrada-digital)
+- [Entrada analógica](ejemplos/Ejercicios.md#usar-entrada-analógica)
+- [Uso de input](ejemplos/Ejercicios.md#usar-función-input)
+- [Uso de listas](ejemplos/Ejercicios.md#uso-de-listas-o-arrays)
